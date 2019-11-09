@@ -2,16 +2,17 @@ extends KinematicBody2D
 
 var motion = Vector2(0, 0)
 
-const SPEED = 500
+const SPEED = 700
 const GRAVITY = 400
 const UP = Vector2(0, -1)
-const JUMP_SPEED = 3000
+const JUMP_SPEED = 3800
 
 func _physics_process(delta):
 	
 	apply_gravity()
 	jump()
 	move_left_and_right()
+	animate()
 	move_and_slide(motion, UP)
 	
 func apply_gravity():
@@ -21,7 +22,7 @@ func apply_gravity():
 		motion.y = 0
 
 func jump():
-	if Input.is_action_just_pressed("Jump") && is_on_floor():
+	if Input.is_action_pressed("Jump") && is_on_floor():
 		motion.y -= JUMP_SPEED
 
 func move_left_and_right():
@@ -32,3 +33,16 @@ func move_left_and_right():
 	else: 
 		motion.x = 0
 	
+func animate():
+	if motion.y < 0:
+		$AnimatedSprite.play("Jump")
+	elif motion.x != 0:
+		$AnimatedSprite.play("Walk")
+		if motion.x < 0:
+			$AnimatedSprite.flip_h = true
+		else:
+			$AnimatedSprite.flip_h = false
+	else:
+		$AnimatedSprite.play("Idle")
+		
+		
