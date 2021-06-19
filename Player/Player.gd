@@ -5,7 +5,7 @@ var motion = Vector2(0, 0)
 const SPEED = 700
 const GRAVITY = 400
 const UP = Vector2(0, -1)
-const JUMP_SPEED = 3800
+const JUMP_SPEED = 3900
 
 signal animate
 

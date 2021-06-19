@@ -20,15 +20,15 @@ animations = [ {
 "name": "Walk",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
 } ]
 
 [node name="PlayerAnimation" type="AnimatedSprite"]
