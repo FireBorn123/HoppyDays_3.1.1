@@ -28,7 +28,7 @@ shape = SubResource( 1 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = -10
-limit_bottom = 1000
+limit_bottom = 2000
 limit_smoothed = true
 smoothing_enabled = true
 
