@@ -33,6 +33,7 @@ func apply_gravity():
 func jump():
 	if Input.is_action_pressed("Jump") && is_on_floor():
 		motion.y -= JUMP_SPEED
+		$JumpSFX.play()
 
 func move_left_and_right():
 	if Input.is_action_pressed("Left") and not Input.is_action_pressed("Right"):
@@ -50,9 +51,12 @@ func End_Game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
 
 func Hurt():
+	print("LivesBefore: ", lives)
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
 	motion.y -= JUMP_SPEED
+	$PainSFX.play()
 	lives -= 1
+	print("LivesAfter: ", lives)
 	if lives <= 0:
 		End_Game()
