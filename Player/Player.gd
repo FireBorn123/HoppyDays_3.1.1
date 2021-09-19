@@ -3,13 +3,11 @@ extends KinematicBody2D
 var motion = Vector2(0, 0)
 
 const SPEED = 1200
-const GRAVITY = 400
+const GRAVITY = 300
 const UP = Vector2(0, -1)
 const JUMP_SPEED = 4000
 const World_Limit = 3000
 const BoostMultiplyer = 2
-
-var lives = 3
 
 signal animate
 
@@ -23,7 +21,7 @@ func _physics_process(delta):
 	
 func apply_gravity():
 	if position.y >= World_Limit:
-		End_Game()
+		get_tree().call_group("Gamestate", "End_Game")
 	if  is_on_floor():
 		motion.y = 0
 	elif is_on_ceiling():
@@ -48,19 +46,12 @@ func animate():
 	emit_signal("animate", motion)
 
 
-func End_Game():
-	get_tree().change_scene("res://Levels/GameOver.tscn")
-
-func Hurt():
-	print("LivesBefore: ", lives)
-	position.y -= 1
+func hurt():
+	position.y -= 50
 	yield(get_tree(), "idle_frame")
-	motion.y -= JUMP_SPEED
+	motion.y -= JUMP_SPEED *1.4
 	$PainSFX.play()
-	lives -= 1
-	print("LivesAfter: ", lives)
-	if lives <= 0:
-		End_Game()
+
 
 
 func boost():

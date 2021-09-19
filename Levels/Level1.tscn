@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Hazards/SpikeBottom.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Hoppy-Days-Assets/SFX/Summer_Park.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/GameState.gd" type="Script" id=7]
 
-[node name="Node2D" type="Node2D"]
+[node name="Level1" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 215.91, 215.791 )
@@ -19,15 +21,19 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -1, 0 )
 tile_set = ExtResource( 1 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 18, 2, 0, 84, 3, 0, 131079, 0, 0, 196651, 7, 0, 262173, 2, 0, 327746, 2, 0, 393217, 2, 0, 393228, 2, 0, 458790, 3, 0, 524296, 3, 0, 589848, 2, 0, 655376, 2, 0, 655434, 3, 0, 720982, 0, 0, 786555, 0, 0, 852024, 2, 0, 852048, 3, 0, 852086, 5, 0, 983151, 5, 0, 1048677, 0, 0 )
+tile_data = PoolIntArray( -6094846, 3, 0, 18, 2, 0, 84, 3, 0, 131079, 0, 0, 196651, 7, 0, 262173, 2, 0, 327746, 2, 0, 393217, 2, 0, 393228, 2, 0, 458790, 3, 0, 524296, 3, 0, 589848, 2, 0, 655376, 2, 0, 655434, 3, 0, 720982, 0, 0, 786555, 0, 0, 852024, 2, 0, 852048, 3, 0, 852086, 5, 0, 983151, 5, 0, 1048677, 0, 0 )
 
 [node name="Hazards" type="Node" parent="."]
 
 [node name="SpikeTop2" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 865.039, 347.065 )
+
+[node name="SpikeTop3" parent="Hazards" instance=ExtResource( 3 )]
+position = Vector2( 1427.78, -28.0823 )
 
 [node name="SpikeTop4" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 1823.83, 543.903 )
