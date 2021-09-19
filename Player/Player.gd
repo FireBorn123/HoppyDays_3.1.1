@@ -2,11 +2,12 @@ extends KinematicBody2D
 
 var motion = Vector2(0, 0)
 
-const SPEED = 800
+const SPEED = 1200
 const GRAVITY = 400
 const UP = Vector2(0, -1)
-const JUMP_SPEED = 3800
+const JUMP_SPEED = 4000
 const World_Limit = 3000
+const BoostMultiplyer = 2
 
 var lives = 3
 
@@ -60,3 +61,9 @@ func Hurt():
 	print("LivesAfter: ", lives)
 	if lives <= 0:
 		End_Game()
+
+
+func boost():
+	position.y -= 100
+	yield(get_tree(), "idle_frame")
+	motion.y -= BoostMultiplyer * JUMP_SPEED
