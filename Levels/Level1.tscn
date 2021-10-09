@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Hoppy-Days-Assets/SFX/Summer_Park.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/GameState.gd" type="Script" id=7]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/GUI.gd" type="Script" id=9]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 7 )
@@ -64,3 +66,8 @@ position = Vector2( 3895.84, 780.12 )
 
 [node name="JumpPad4" parent="JumpPads" instance=ExtResource( 6 )]
 position = Vector2( 4870.99, 589.847 )
+
+[node name="GUI" parent="." groups=[
+"GUI",
+] instance=ExtResource( 8 )]
+script = ExtResource( 9 )
