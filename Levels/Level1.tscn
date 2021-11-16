@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=9]
 [ext_resource path="res://Items/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://NPCs/Spikeman.tscn" type="PackedScene" id=11]
+[ext_resource path="res://NPCs/Cloud.tscn" type="PackedScene" id=12]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 7 )
@@ -50,9 +51,6 @@ position = Vector2( 1292.14, 114.293 )
 
 [node name="SpikeBottom4" parent="Hazards" instance=ExtResource( 4 )]
 position = Vector2( 5459.12, 128.564 )
-
-[node name="SpikeBottom5" parent="Hazards" instance=ExtResource( 4 )]
-position = Vector2( 2913.38, -190.215 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -137,3 +135,15 @@ position = Vector2( 4416.54, 235.368 )
 
 [node name="Spikeman3" parent="NPCs" instance=ExtResource( 11 )]
 position = Vector2( 8046, 677.753 )
+
+[node name="Cloud" parent="NPCs" instance=ExtResource( 12 )]
+position = Vector2( 423.358, -727.795 )
+
+[node name="Cloud2" parent="NPCs" instance=ExtResource( 12 )]
+position = Vector2( 3605.68, -309.194 )
+
+[node name="Cloud3" parent="NPCs" instance=ExtResource( 12 )]
+position = Vector2( 5137.38, 47.5684 )
+
+[node name="Cloud4" parent="NPCs" instance=ExtResource( 12 )]
+position = Vector2( 7216.11, -256.869 )
