@@ -36,3 +36,7 @@ func addLives():
 
 func End_Game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
+
+
+func Win_Game():
+	get_tree().change_scene("res://Levels/Victory.tscn")
